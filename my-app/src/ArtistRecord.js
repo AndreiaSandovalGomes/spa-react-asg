@@ -5,11 +5,10 @@ import './ArtistRecord.css';
 
 function ArtistMusic(props){
   return (
-  <li>{props.title} <br />
-      {props.artist} <br />
-      <iframe src={props.url} />
-  </li>
-  )
+  <li>
+    {props.title} < br/>
+  <iframe src= {props.url}/>
+  </li>)
 }
 
 class ArtistRecord extends Component {
@@ -43,7 +42,7 @@ class ArtistRecord extends Component {
       <h3>{this.props.genre}</h3>
       <button onClick={this.getArtistMusic}>Mostrar musicas</button>
       <ul>
-        {this.state.tracks.map((track, index) => <ArtistRecord key={index} {...track}/>)}
+        {this.state.tracks.map((track, index) => <ArtistMusic key={index} {...track}/>)}
       </ul>
     </Record>
     )

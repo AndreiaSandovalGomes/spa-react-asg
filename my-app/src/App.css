@@ -42,3 +42,9 @@ body {
   border: 1px solid #8ba1b8;
   font-size: 1rem;
 }
+.contact{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

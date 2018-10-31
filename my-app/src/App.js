@@ -41,21 +41,27 @@ class App extends Component {
     return (
       <div>
         <nav className='menu'>
-        <Link to='/'>Home</Link>
-        <Link to='/playlist'>Playlist</Link>
-        <Link to='/yourList'>Crie sua Playlist</Link>
-        <Link to='/contato'>Entre em Contato</Link>
-      </nav>
+          <Link to='/'>Home</Link>
+          <Link to='/playlist'>Playlist</Link>
+          <Link to='/yourList'>Crie sua Playlist</Link>
+          <Link to='/contato'>Entre em Contato</Link>
+        </nav>
 
-      <Route path='/' exact component={Home} />
+      <Route path='/' exact component={Home} />>
       <Route path='/yourList'  component={Musicas} />
-      <Route path='/contato' render={() => 'Entre em contato com a laboratoria'} />
-
+      <Route path='/contato' render={() =>
+      <div className="contact">
+        <h2>Entre em contato com nosso atendimento para dúvidas.<br/>
+            Nosso email: musicaslegais@tocamusica.com <br/>
+            Whatsapp: (11)9999-0000
+        </h2>
+      </div>
+      } />
       <Route path='/playlist' render={() =>
         <div>
             {this.state.artists.map(artist => <ArtistRecord {...artist} key={artist.id} />)}
-          </div>
-        } />
+        </div>
+      } />
       <Route path='/yourList' render={() => 'Isso mesmo'} />
 
 
